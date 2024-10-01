@@ -1,14 +1,11 @@
 package Threads;
-
 import java.util.concurrent.BlockingQueue;
 
 public class HandleResultThread extends Thread {
     private final BlockingQueue<Boolean> queue;
-    private final int totalResults;
 
-    public HandleResultThread(BlockingQueue<Boolean> queue, int totalResults) {
+    public HandleResultThread(BlockingQueue<Boolean> queue) {
         this.queue = queue;
-        this.totalResults = totalResults;
     }
 
     @Override
@@ -16,14 +13,19 @@ public class HandleResultThread extends Thread {
         try {
             System.out.println("Thread HandleResultThread is working!");
 
-            // Collect all results from the queue
-            for (int i = 0; i < totalResults; i++) {
-                boolean result = queue.take();
-                System.out.println("Thread HandleResultThread got result: " + result);
+            while (!isInterrupted()) {
+                for (Boolean value : queue) {
+                    System.out.println("Has been got result: " + value);
+                    if (!queue.remove(value)) throw new Exception("Queue item is not deleted!!!");
+                }
             }
 
+            System.out.println("Thread HandleResultThread is finished!");
+
         } catch (InterruptedException e) {
-            System.out.println("Thread has been interrupted");
+            System.out.println("Thread HandleResultThread has been interrupted");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }

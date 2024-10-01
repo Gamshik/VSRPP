@@ -3,21 +3,24 @@ import java.util.concurrent.BlockingQueue;
 
 public class DivideFiveThread extends Thread {
     private final BlockingQueue<Boolean> queue;
-    private final int verifyNumber;
+    private final int availableQueueSize;
 
-    public DivideFiveThread(int verifyNumber, BlockingQueue<Boolean> queue) {
-        this.verifyNumber = verifyNumber;
+    public DivideFiveThread(BlockingQueue<Boolean> queue, int availableQueueSize) {
         this.queue = queue;
+        this.availableQueueSize = availableQueueSize;
     }
 
     @Override
     public void run(){
         try{
             System.out.println("Thread DivideFiveThread is working!");
-            boolean isVerify = verifyNumber % 5 == 0;
-            queue.put(isVerify);
-            System.out.println("Thread DivideFiveThread added result: " + isVerify + " for number " + verifyNumber);
-            Thread.sleep(2000);
+            for (int i = 0; i < availableQueueSize; i++) {
+                var verifyNumber = i + 1;
+                boolean isVerify = verifyNumber % 5 == 0;
+                queue.put(isVerify);
+                System.out.println("Thread DivideFiveThread added result: " + isVerify + " for number " + verifyNumber + ". " + verifyNumber + "/5");
+                Thread.sleep(2000);
+            }
         }
         catch(InterruptedException e){
             System.out.println("Thread has been interrupted");
