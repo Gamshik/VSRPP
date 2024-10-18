@@ -1,7 +1,8 @@
-import AnimalIerarhy.Animal;
-import AnimalIerarhy.Bird;
-import AnimalIerarhy.Mammal;
-import AnimalIerarhy.Parnopods;
+import AnimalIerarchy.Animal;
+import AnimalIerarchy.Bird;
+import AnimalIerarchy.Mammal;
+import AnimalIerarchy.Parnopods;
+
 
 public class Main {
     public static void main(String[] args) {

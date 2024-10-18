@@ -1,4 +1,6 @@
-class Mammal extends Animal {
+package AnimalIerarhy;
+
+public class Mammal extends Animal {
     public Mammal(String name) {
         super(name);
     }

@@ -1,4 +1,6 @@
-abstract class Animal {
+package AnimalIerarhy;
+
+public abstract class Animal {
     private static Animal head = null;
 
     protected Animal next;

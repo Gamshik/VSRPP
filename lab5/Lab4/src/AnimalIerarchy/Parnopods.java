@@ -1,4 +1,6 @@
-class Parnopods extends Mammal {
+package AnimalIerarchy;
+
+public class Parnopods extends Mammal {
     public Parnopods(String name) {
         super(name);
     }
