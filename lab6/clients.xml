@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Clients>
+    <Client>
+        <Id>c1dbb937-054e-4baf-b072-b320d233eb5c</Id>
+        <Name>Alice</Name>
+    </Client>
+    <Client>
+        <Id>a929ad00-6457-4ca6-b3b6-65be6cae72b3</Id>
+        <Name>Bob</Name>
+    </Client>
+</Clients>

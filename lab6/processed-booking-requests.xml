@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<BookingRequests>
+    <BookingRequest>
+        <Client>
+            <Id>c1dbb937-054e-4baf-b072-b320d233eb5c</Id>
+            <Name>Alice</Name>
+        </Client>
+        <Id>513ede29-22a6-4503-8c7f-62ae63903687</Id>
+        <Places>3</Places>
+        <RoomClass>lux</RoomClass>
+        <Days>5</Days>
+        <Confirmed>true</Confirmed>
+        <Paid>false</Paid>
+    </BookingRequest>
+    <BookingRequest>
+        <Client>
+            <Id>a929ad00-6457-4ca6-b3b6-65be6cae72b3</Id>
+            <Name>Bob</Name>
+        </Client>
+        <Id>83b0dbff-c6d8-4d26-9312-abae37d2341c</Id>
+        <Places>2</Places>
+        <RoomClass>standard</RoomClass>
+        <Days>3</Days>
+        <Confirmed>false</Confirmed>
+        <Paid>false</Paid>
+    </BookingRequest>
+</BookingRequests>
